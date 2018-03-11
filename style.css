@@ -45,13 +45,15 @@ li {
 }
     
 #amount25 {
-    left: 150px;
-    top: 230px;
+    top:240px;
+    left: 650px;
+    width:50px;
     position: absolute;
 }       
 #amount50 {
-    left: 425px;
-    top: 265px;
+    top:240px;
+    left: 585px;
+    width:50px;
     position:absolute;
 }
 #amount100 {
