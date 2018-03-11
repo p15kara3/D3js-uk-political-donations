@@ -45,9 +45,10 @@ li {
 }
     
 #amount25 {
-    top:140px;
-    left: 450px;
-    position: fixed;
+    top:240px;
+    left: 650px;
+    width:50px;
+    position: absolute;
 }       
 #amount50 {
     top:240px;
