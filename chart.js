@@ -287,8 +287,8 @@ function moveToAmounts(alpha) { //adding function moveToAmounts
 				centreX = svgCentre.x;
 			}
 
-		d.x += (centreX - d.x) * (brake + 0.2) * alpha * 2.1;
-		d.y += (centreY - d.y) * (brake + 0.2) * alpha * 2.1;
+		d.x += (centreX - d.x) * (brake + 0.2) * alpha * 1.1;
+		d.y += (centreY - d.y) * (brake + 0.2) * alpha * 1.1;
 	};
 } 
 		
