@@ -26,7 +26,7 @@ li {
 }
 
 /* Initial appearance on load */
-#view-party-type, #view-donor-type, #view-source-type, #view-donations-amount-type { 
+#view-party-type, #view-donor-type, #view-source-type { 
     display: none;
 }
 
@@ -63,15 +63,15 @@ li {
 /*  Party view */
 #conservative, #labour, #libdem { padding: 10px; }
 #conservative {
-    background: rgba(0, 153, 51, 0.2); /*par1: allagi xrwma se Conservative Party*/
+    background: rgba(0, 153, 51, 0.2); /*allagi xrwma se Conservative Party*/
     top: 110px;
 }
 #labour {
-    background: rgba(240, 0, 255, 0.2); /*par1: allagi xrwma se Labour Party*/
+    background: rgba(240, 0, 255, 0.2); /*allagi xrwma se Labour Party*/
     top: 330px;
 }
 #libdem {
-    background: rgba(255, 102, 0, 0.2); /*par1: allagi xrwma se Liberal Democrats*/
+    background: rgba(255, 102, 0, 0.2); /*allagi xrwma se Liberal Democrats*/
     top: 550px;
 }
 
@@ -102,23 +102,6 @@ li {
     right: 0
 }
 
-#g {
-    top: 110px;
-    position: absolute;
-}
-
-#h {
-    top: 330px;
-    position: absolute;
-}
-#i {
-    top: 550px;
-    position: absolute;
-}
-#j {
-    top: 770px;
-    position: absolute;
-}    
 /* Value scale */
 
 #value-scale {
