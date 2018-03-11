@@ -21,7 +21,7 @@ var entityCentres = {
 		individual: {x: w / 3.65, y: h / 3.3},
 	};
 
-var fill = d3.scale.ordinal().range(["#F000FF", "#009933", "#FF6600"]);
+var fill = d3.scale.ordinal().range(["#F000FF", "#009933", "#FF6600"]); //changing nodes' color
 
 var svgCentre = { 
     x: w / 3.6, y: h / 2
@@ -48,7 +48,7 @@ function transition(name) {
 		$("#view-donor-type").fadeOut(250);
 		$("#view-source-type").fadeOut(250);
 		$("#view-party-type").fadeOut(250);
-		$("#view-amount-type").fadeOut(250);
+		$("#view-amount-type").fadeOut(250); //adding view amount type
 		return total();
 		//location.reload();
 	}
@@ -57,7 +57,7 @@ function transition(name) {
 		$("#value-scale").fadeOut(250);
 		$("#view-donor-type").fadeOut(250);
 		$("#view-source-type").fadeOut(250);
-		$("#view-amount-type").fadeOut(250);
+		$("#view-amount-type").fadeOut(250); //adding view amount type
 		$("#view-party-type").fadeIn(1000);
 		return partyGroup();
 	}
@@ -66,7 +66,7 @@ function transition(name) {
 		$("#value-scale").fadeOut(250);
 		$("#view-party-type").fadeOut(250);
 		$("#view-source-type").fadeOut(250);
-		$("#view-amount-type").fadeOut(250);
+		$("#view-amount-type").fadeOut(250); //adding view amount type
 		$("#view-donor-type").fadeIn(1000);
 		return donorType();
 	}
@@ -75,7 +75,7 @@ function transition(name) {
 		$("#value-scale").fadeOut(250);
 		$("#view-donor-type").fadeOut(250);
 		$("#view-party-type").fadeOut(250);
-		$("view-amount-type").fadeOut(250);
+		$("view-amount-type").fadeOut(250); //adding view amount type
 		$("#view-source-type").fadeIn(1000);
 		return fundsType();
 	}
@@ -85,7 +85,7 @@ function transition(name) {
 		$("#view-donor-type").fadeOut(250);
 		$("#view-party-type").fadeOut(250);
 		$("#view-source-type").fadeOut(250);
-		$("#view-amount-type").fadeIn(1000);
+		$("#view-amount-type").fadeIn(1000); //adding view amount type
 		return amountType(); 
 	}
  }
@@ -156,7 +156,7 @@ function fundsType() {
 		.on("tick", types)
 		.start();
 }
-function amountType() {
+function amountType() { //adding function amountType()
 	force.gravity(0)
 		.friction(0.75)
 		.charge(function(d) { return -Math.pow(d.radius, 2.0) / 3; })
@@ -194,7 +194,7 @@ function all(e) {
 		node.attr("cx", function(d) { return d.x; })
 			.attr("cy", function(d) {return d.y; });
 }
-function amounts(e) {
+function amounts(e) { //adding function amounts
 	node.each(moveToAmounts(e.alpha));
 		
 		node.attr("cx",function(d) {return d.x; })
@@ -268,7 +268,7 @@ function moveToFunds(alpha) {
 		d.y += (centreY - d.y) * (brake + 0.02) * alpha * 1.1;
 	};
 }
-function moveToAmounts(alpha) {
+function moveToAmounts(alpha) { //adding function moveToAmounts
 	return function(d) {
 		var centreY = svgCentre.y;
 		if (d.value <= 25001) {
@@ -356,7 +356,8 @@ function display(data) {
 
 	return start();
 }
-function search(d) { //search function 
+
+function search(d) { //adding function search, for search with Google
 	var donor=d.donor;
 	window.open("https://www.google.com/search?q=" + donor);
 }
@@ -399,7 +400,7 @@ function mouseover(d, i) {
 		.html(infoBox)
 			.style("display","block");
 	
-	responsiveVoice.speak(donor + " " + amount + "£","UK English Male",{volume: 1});
+	responsiveVoice.speak(donor + " " + amount + "£","UK English Male",{volume: 1}); //when mouse active speak
 	}
 
 function mouseout() {
@@ -410,7 +411,7 @@ function mouseout() {
 
 		d3.select(".tooltip")
 			.style("display", "none");
-	responsiveVoice.cancel(); 
+	responsiveVoice.cancel(); //when mouse unactive don't speak
 		}
 
 	
