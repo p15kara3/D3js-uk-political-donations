@@ -32,40 +32,37 @@
 </head>
 <!-- Add feature detection and noscript -->
     
-    <audio id="sound" src="click_sound.mp3"></audio>
-    <a onclick = "playSound();"></a>
-    <script>
-        function playSound() {
-          var sound = document.getElementById("sound");
-          sound.play();
-      }
-    </script>
     
-    <style type="text/css">
+
+    <style type="text/css"> /*Stylizing zoom efect, using .zoom:hover*/
         .zoom:hover {
 		
-	-moz-transform: scale(1.5);
-        -ms-transform: scale(1.5); /* IE 9 */
-        -webkit-transform: scale(1.5); /* Safari 3-8 */
-        transform: scale(1.5);        /* (150% zoom)*/
+	-moz-transform: scale(1.5); /*Mozilla*/
+        -ms-transform: scale(1.5); /* IE */
+        -webkit-transform: scale(1.5); /* Safari */
+        transform: scale(1.5);  /* (150% zoom)*/
 }
 </style>
+	
 <body>
     
     <header role="banner" id="title">
+	    
+	    <audio id="sound" src="click_sound.mp3" preload="auto"></audio>
+
         <h1 class="zoom">Who's funding the big three?</h1>
     </header>
     <nav role="navigation">
         <ul>
-            <li><a href="#" role="button" class="pure-button switch" id="all-donations" onclick = "playSound()">All money</a>
+            <li><a href="#" role="button" class="pure-button switch" id="all-donations" onclick = "document.getElementById('sound').play();">All money</a>
             </li>
-            <li><a href="#" role="button" class="pure-button switch" id="group-by-money-source" onclick = "playSound()">The public's purse</a>
+            <li><a href="#" role="button" class="pure-button switch" id="group-by-money-source" onclick = "document.getElementById('sound').play();">The public's purse</a>
             </li>
-            <li><a href="#" role="button" class="pure-button switch" id="group-by-party" onclick = "playSound()">Split by party</a>
+            <li><a href="#" role="button" class="pure-button switch" id="group-by-party" onclick = "document.getElementById('sound').play();">Split by party</a>
             </li>
-            <li><a href="#" role="button" class="pure-button switch" id="group-by-donor-type" onclick = "playSound()">Split by type of donor</a>
+            <li><a href="#" role="button" class="pure-button switch" id="group-by-donor-type" onclick = "document.getElementById('sound').play();">Split by type of donor</a>
             </li>
-            <li><a href="#" role="button" class="pure-button switch" id="group-by-amount-of-donation" onclick="playSound()">Split by the amount of the donation</a>
+            <li><a href="#" role="button" class="pure-button switch" id="group-by-amount-of-donation" onclick = "document.getElementById('sound').play();">Split by the amount of the donation</a>
             </li>
         </ul>
     </nav>
