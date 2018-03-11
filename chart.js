@@ -9,7 +9,7 @@ var radius = d3.scale.sqrt().range([10, 20]);
 var partyCentres = { 
     con: { x: w / 3, y: h / 3.3}, 
     lab: {x: w / 3, y: h / 2.3}, 
-    lib: {x: w / 3	, y: h / 1.8}
+    lib: {x: w / 3, y: h / 1.8}
   };
 
 var entityCentres = { 
@@ -48,7 +48,7 @@ function transition(name) {
 		$("#view-donor-type").fadeOut(250);
 		$("#view-source-type").fadeOut(250);
 		$("#view-party-type").fadeOut(250);
-		$("#view-amount-type").fadeOut(250); //view-amount-type
+		$("#view-amount-type").fadeOut(250);
 		return total();
 		//location.reload();
 	}
@@ -57,7 +57,7 @@ function transition(name) {
 		$("#value-scale").fadeOut(250);
 		$("#view-donor-type").fadeOut(250);
 		$("#view-source-type").fadeOut(250);
-		$("#view-amount-type").fadeOut(250); //view-amount-type
+		$("#view-amount-type").fadeOut(250);
 		$("#view-party-type").fadeIn(1000);
 		return partyGroup();
 	}
@@ -66,7 +66,7 @@ function transition(name) {
 		$("#value-scale").fadeOut(250);
 		$("#view-party-type").fadeOut(250);
 		$("#view-source-type").fadeOut(250);
-		$("#view-amount-type").fadeOut(250); //view-amount-type
+		$("#view-amount-type").fadeOut(250);
 		$("#view-donor-type").fadeIn(1000);
 		return donorType();
 	}
@@ -75,22 +75,20 @@ function transition(name) {
 		$("#value-scale").fadeOut(250);
 		$("#view-donor-type").fadeOut(250);
 		$("#view-party-type").fadeOut(250);
-		$("#view-amount-type").fadeOut(250); //view-amount-type
+		$("view-amount-type").fadeOut(250);
 		$("#view-source-type").fadeIn(1000);
 		return fundsType();
 	}
-	if (name === "group-by-amount") {
+	if (name === "group-by-amount-of-donation") {
 		$("#initial-content").fadeOut(250);
 		$("#value-scale").fadeOut(250);
 		$("#view-donor-type").fadeOut(250);
 		$("#view-party-type").fadeOut(250);
 		$("#view-source-type").fadeOut(250);
-		$("#view-amount-type").fadeIn(1000); //view-amount-type
-		
-		return amountType();
+		$("#view-amount-type").fadeIn(1000);
+		return amountType(); 
 	}
-}	
-
+ }
 function start() {
 
 	node = nodeGroup.selectAll("circle")
@@ -107,12 +105,12 @@ function start() {
 		.attr("r", 0)
 		.style("fill", function(d) { return fill(d.party); })
 		.on("mouseover", mouseover)
-		.on("mouseout", mouseout);
+		.on("mouseout", mouseout)
+		//click for search
 		// Alternative title based 'tooltips'
 		// node.append("title")
 		//	.text(function(d) { return d.donor; });
-	
-                .on("click", search);	
+		.on("click",search);
 
 		force.gravity(0)
 			.friction(0.75)
@@ -158,8 +156,6 @@ function fundsType() {
 		.on("tick", types)
 		.start();
 }
-
-//Adding funstion amount type
 function amountType() {
 	force.gravity(0)
 		.friction(0.75)
@@ -168,6 +164,7 @@ function amountType() {
 		.start()
 		.colourByParty();
 }
+
 function parties(e) {
 	node.each(moveToParties(e.alpha));
 
@@ -197,8 +194,6 @@ function all(e) {
 		node.attr("cx", function(d) { return d.x; })
 			.attr("cy", function(d) {return d.y; });
 }
-
-//Adding function amounts(e)
 function amounts(e) {
 	node.each(moveToAmounts(e.alpha));
 		
@@ -273,31 +268,30 @@ function moveToFunds(alpha) {
 		d.y += (centreY - d.y) * (brake + 0.02) * alpha * 1.1;
 	};
 }
-
-//Adding function moveToAmounts
 function moveToAmounts(alpha) {
 	return function(d) {
-		var centreX;
-		var centreY;
-		if (d.value <= 50001) {
-			centreY=700;
-			centreX=300;
-			} else if (d.value <= 100001){
-				centreY=600;
-				centreX=750;
-			}else if (d.value <= 1000001){
-				centreY=500;
-				centreX=300;
-			}else if (d.value <=maxVal){
-				centreY=300;
-				centreX=300;
+		var centreY = svgCentre.y;
+		if (d.value <= 25001) {
+				centreX = svgCentre.x + 250;
+			} else if (d.value <= 50001) {
+			        centreX = svgCentre.x + 200;
+			} else if (d.value <= 100001) {
+				centreX = svgCentre.x + 175;
+			} else  if (d.value <= 500001) {
+				centreX = svgCentre.x + 150;
+			} else  if (d.value <= 1000001) {
+				centreX = svgCentre.x +80;
+			} else if (d.value<= maxVal) {	
+				centreX =svgCentre.x;
+			} else {
+				centreX = svgCentre.x;
 			}
-				
 
 		d.x += (centreX - d.x) * (brake + 0.06) * alpha * 1.2;
 		d.y += (centreY - d.y) * (brake + 0.06) * alpha * 1.2;
 	};
 } 
+		
 // Collision detection function by m bostock
 function collide(alpha) {
   var quadtree = d3.geom.quadtree(nodes);
@@ -332,7 +326,6 @@ function collide(alpha) {
 function display(data) {
 
 	maxVal = d3.max(data, function(d) { return d.amount; });
-
 	var radiusScale = d3.scale.sqrt()
 		.domain([0, maxVal])
 			.range([10, 20]);
@@ -363,12 +356,11 @@ function display(data) {
 
 	return start();
 }
-//Adding function for search with Google
-function search(d) { 
+function search(d) { //search function 
 	var donor=d.donor;
 	window.open("https://www.google.com/search?q=" + donor);
 }
-
+		    
 function mouseover(d, i) {
 	// tooltip popup
 	var mosie = d3.select(this);
@@ -387,7 +379,7 @@ function mouseover(d, i) {
 	
 	// *******************************************
 	
-	
+	 
 	
 
 	
@@ -406,7 +398,7 @@ function mouseover(d, i) {
     .style("top", (parseInt(d3.select(this).attr("cy") - (d.radius+150)) + offset.top) + "px")
 		.html(infoBox)
 			.style("display","block");
-	//Voice when mouse active
+	
 	responsiveVoice.speak(donor + " " + amount + "£","UK English Male",{volume: 1});
 	}
 
@@ -418,11 +410,10 @@ function mouseout() {
 
 		d3.select(".tooltip")
 			.style("display", "none");
-	//No voice when mouse not active
-	responsiveVoice.cancel();
-	       
+	responsiveVoice.cancel(); 
 		}
 
+	
 $(document).ready(function() {
 		d3.selectAll(".switch").on("click", function(d) {
       var id = d3.select(this).attr("id");
@@ -431,5 +422,4 @@ $(document).ready(function() {
     return d3.csv("data/7500up.csv", display);
 
 });
-
 
