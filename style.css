@@ -26,12 +26,12 @@ li {
 }
 
 /* Initial appearance on load */
-#view-party-type, #view-donor-type, #view-source-type { 
+#view-party-type, #view-donor-type, #view-source-type, #view-amount-type { 
     display: none;
 }
 
 /* View containers */
-#initial-content, #view-source-type {
+#initial-content, #view-source-type, #view-amount-type {
     left: 650px;
     width: 400px;
 }
@@ -100,6 +100,24 @@ li {
     top: 530px;
     text-align: right;
     right: 0
+}
+
+#amount50 {
+     top: 55px;
+}
+
+#amount100 {
+    top: 185px;
+    left: 40px;
+}
+amount1000 {
+     top: 335px;
+    left: -40px;
+}
+
+#amountmax {
+    top: 470px;
+    left: 60px;
 }
 
 /* Value scale */
