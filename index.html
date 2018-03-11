@@ -52,8 +52,10 @@
 	
 	<!--Adding sound-->
 	
+	<audio id="audio" src="click_sound.mp3"></audio>
+	<a onclick = "playAudio();"></a>
     <script>
-	    var audio= document.getElementById("click_sound.mp3");
+	    var audio= document.getElementById("audio");
 	    
 	    function playAudio(){
 		    audio.play();
@@ -62,13 +64,13 @@
 	  
     <nav role="navigation">
         <ul>
-            <li><a href="#" onclick="playAudio()" role="button" class="pure-button switch" id="all-donations">All money</a>
+            <li><a href="#"  role="button" class="pure-button switch" id="all-donations" onclick="playAudio()">All money</a>
             </li>
-            <li><a href="#" onclick="playAudio()" role="button" class="pure-button switch" id="group-by-money-source">The public's purse</a>
+            <li><a href="#"  role="button" class="pure-button switch" id="group-by-money-source" onclick="playAudio()">The public's purse</a>
             </li>
-            <li><a href="#" onclick="playAudio()" role="button" class="pure-button switch" id="group-by-party">Split by party</a>
+            <li><a href="#"  role="button" class="pure-button switch" id="group-by-party" onclick="playAudio()">Split by party</a>
             </li>
-            <li><a href="#" onclick="playAudio()" role="button" class="pure-button switch" id="group-by-donor-type">Split by type of donor</a>
+            <li><a href="#"  role="button" class="pure-button switch" id="group-by-donor-type" onclick="playAudio()">Split by type of donor</a>
             </li>
 	    
         </ul>
