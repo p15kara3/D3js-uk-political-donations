@@ -53,18 +53,22 @@
 	<!--Adding sound-->
 	
     <script>
-	    var audio= new Audio("click_sound.mp3");
+	    var audio= document.getElementById("click_sound.mp3");
+	    
+	    function playAudio(){
+		    audio.play();
+	    }
     </script>	    
 	  
     <nav role="navigation">
         <ul>
-            <li><a href="#" onclick="audio.play()" role="button" class="pure-button switch" id="all-donations">All money</a>
+            <li><a href="#" onclick="playAudio()" role="button" class="pure-button switch" id="all-donations">All money</a>
             </li>
-            <li><a href="#" onclick="audio.play()" role="button" class="pure-button switch" id="group-by-money-source">The public's purse</a>
+            <li><a href="#" onclick="playAudio()" role="button" class="pure-button switch" id="group-by-money-source">The public's purse</a>
             </li>
-            <li><a href="#" onclick="audio.play()" role="button" class="pure-button switch" id="group-by-party">Split by party</a>
+            <li><a href="#" onclick="playAudio()" role="button" class="pure-button switch" id="group-by-party">Split by party</a>
             </li>
-            <li><a href="#" onclick="audio.play()" role="button" class="pure-button switch" id="group-by-donor-type">Split by type of donor</a>
+            <li><a href="#" onclick="playAudio()" role="button" class="pure-button switch" id="group-by-donor-type">Split by type of donor</a>
             </li>
 	    
         </ul>
