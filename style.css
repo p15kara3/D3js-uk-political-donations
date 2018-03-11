@@ -26,7 +26,7 @@ li {
 }
 
 /* Initial appearance on load */
-#view-party-type, #view-donor-type, #view-source-type, #view-amount-type { /*reference of #view-amount-type*/
+#view-party-type, #view-donor-type, #view-source-type, #view-donations-amount-type { 
     display: none;
 }
 
@@ -39,12 +39,28 @@ li {
     left: 650px;
     width: 272px;
 }
-#view-amount-type {
+#view-donations-amount-type { 
     left: 650px;
     height:100%;
 }
+#g {
+    top:110px;
+    position:absolute;
+}
 
-/*  Public or private funds view */
+#h {
+    top:330px;
+    position:absolute;
+}
+#i {
+    top:550px;
+    position:absolute;
+}
+#j {
+    top:770px;
+    position:absolute;
+}
+    /*  Public or private funds view */
 
 #public-or-private-money {
     max-width: 300px;
