@@ -39,28 +39,8 @@ li {
     left: 650px;
     width: 272px;
 }
-#view-donations-amount-type { 
-    left: 650px;
-    height:100%;
-}
-#g {
-    top:110px;
-    position:absolute;
-}
 
-#h {
-    top:330px;
-    position:absolute;
-}
-#i {
-    top:550px;
-    position:absolute;
-}
-#j {
-    top:770px;
-    position:absolute;
-}
-    /*  Public or private funds view */
+/*  Public or private funds view */
 
 #public-or-private-money {
     max-width: 300px;
@@ -122,6 +102,23 @@ li {
     right: 0
 }
 
+#g {
+    top: 110px;
+    position: absolute;
+}
+
+#h {
+    top: 330px;
+    position: absolute;
+}
+#i {
+    top: 550px;
+    position: absolute;
+}
+#j {
+    top: 770px;
+    position: absolute;
+}    
 /* Value scale */
 
 #value-scale {
