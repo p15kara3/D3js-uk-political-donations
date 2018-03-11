@@ -20,6 +20,7 @@
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-44807543-1']);
     _gaq.push(['_trackPageview']);
+	    
     (function() {
         var ga = document.createElement('script');
         ga.type = 'text/javascript';
@@ -32,40 +33,44 @@
 </head>
 <!-- Add feature detection and noscript -->
     
-    <audio id="sound" src="click_sound.mp3"></audio>
+   <!-- <audio id="sound" src="click_sound.mp3"></audio>
     <a onclick = "playSound();"></a>
     <script>
         function playSound() {
           var sound = document.getElementById("sound");
           sound.play();
       }
-    </script>
-    
+    </script> -->
+	
+    <!--Stylizing zoom using .zoom:hover-->
     <style type="text/css">
         .zoom:hover {
 		
-	-moz-transform: scale(1.5);
-        -ms-transform: scale(1.5); /* IE 9 */
-        -webkit-transform: scale(1.5); /* Safari 3-8 */
-        transform: scale(1.5);        /* (150% zoom)*/
+	-moz-transform: scale(1.5); /*Mozilla*/
+        -ms-transform: scale(1.5); /* IE */
+        -webkit-transform: scale(1.5); /* Safari */
+        transform: scale(1.5); /* (150% zoom)*/
 }
 </style>
 <body>
     
     <header role="banner" id="title">
+	    <!--Adding audio tag-->
+	    <audio id="sound" src="click_sound.mp3 preload="auto"></audio>
+								 
         <h1 class="zoom">Who's funding the big three?</h1>
     </header>
     <nav role="navigation">
         <ul>
-            <li><a href="#" role="button" class="pure-button switch" id="all-donations" onclick = "playSound()">All money</a>
+            <li><a href="#" role="button" class="pure-button switch" id="all-donations" onclick = "document.getElementById('sound').play();>All money</a>
             </li>
-            <li><a href="#" role="button" class="pure-button switch" id="group-by-money-source" onclick = "playSound()">The public's purse</a>
+            <li><a href="#" role="button" class="pure-button switch" id="group-by-money-source" onclick = "document.getElementById('sound').play();>The public's purse</a>
             </li>
-            <li><a href="#" role="button" class="pure-button switch" id="group-by-party" onclick = "playSound()">Split by party</a>
+            <li><a href="#" role="button" class="pure-button switch" id="group-by-party" onclick = "document.getElementById('sound').play();>Split by party</a>
             </li>
-            <li><a href="#" role="button" class="pure-button switch" id="group-by-donor-type" onclick = "playSound()">Split by type of donor</a>
+            <li><a href="#" role="button" class="pure-button switch" id="group-by-donor-type" onclick = "document.getElementById('sound').play();>Split by type of donor</a>
             </li>
-            <li><a href="#" role="button" class="pure-button switch" id="group-by-amount-of-donation" onclick="playSound()">Split by the amount of the donation</a>
+            <li><a href="#" role="button" class="pure-button switch" id="group-by-amount-of-donation" onclick = "document.getElementById('sound').play();>Split by the amount of the donation</a>
             </li>
         </ul>
     </nav>
@@ -221,26 +226,26 @@
                <div id="view-amount-type">
 		      <!-- <h5>"Split by the amount of donation:"</h5> -->
 		       <div id="amount-id">
-		       <div id="amount_25000"class="zoom">
-			       <strong>Amount less than 25k &#163;</strong>
+		       <div id="amount_25"class="zoom">
+			       <strong>Amount up to 25.000 &#163;</strong>
 			</div>
 			
-		       <div id="amount_50000" class="zoom">
-			       <strong>Amount less than 50k &#163;</strong>
+		       <div id="amount_50" class="zoom">
+			       <strong>Amount up to 50.000 &#163;</strong>
 			</div>  
 			
-		       <div id="amount_100000" class="zoom">
-			       <strong>Amount less than 100k &#163;</strong>
+		       <div id="amount_100" class="zoom">
+			       <strong>Amount up to 100.000 &#163;</strong>
 			</div>       
 			
-		       <div id="amount_500000" class="zoom">
-			       <strong>Amount less than 500k &#163;</strong>
+		       <div id="amount_500" class="zoom">
+			       <strong>Amount up to 500.000 &#163;</strong>
 			</div> 
-			<div id="amount_1000000" class="zoom">
-			       <strong>Amount less than 1m &#163;</strong>
+			<div id="amount_1000" class="zoom">
+			       <strong>Amount up to 1.000.000 &#163;</strong>
 			</div>        
-			<div id="amount_over" class="zoom">
-			       <strong>Amount more than 1m &#163;</strong>
+			<div id="amount_max" class="zoom">
+			       <strong>More than 1.000.000 &#163;</strong>
 			</div> 
 		 </div>
 	    </div>  
