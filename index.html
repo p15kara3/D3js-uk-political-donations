@@ -47,13 +47,14 @@
 <body>
 
     <header role="banner" id="title">
+	    <!--Adding audio tag-->
+	    <audio id="sound" src="click_sound.mp3" preload="auto"></audio>
+	    
+	    
         <h1 class="zoom">Who's funding the big three?</h1>
     </header>
 	
-	<!--Adding sound-->
-	
-	<audio id="audio" src="click_sound.mp3"></audio>
-	<a onclick = "playAudio();"></a>
+
     <script>
 	    var audio= document.getElementById("audio");
 	    
@@ -64,14 +65,17 @@
 	  
     <nav role="navigation">
         <ul>
-            <li><a href="#"  role="button" class="pure-button switch" id="all-donations" onclick="playAudio()">All money</a>
+            <li><a href="#"  role="button" class="pure-button switch" id="all-donations" onclick = "document.getElementById('audio').play();">All money</a>
             </li>
-            <li><a href="#"  role="button" class="pure-button switch" id="group-by-money-source" onclick="playAudio()">The public's purse</a>
+            <li><a href="#"  role="button" class="pure-button switch" id="group-by-money-source" onclick = "document.getElementById('audio').play();">The public's purse</a>
             </li>
-            <li><a href="#"  role="button" class="pure-button switch" id="group-by-party" onclick="playAudio()">Split by party</a>
+            <li><a href="#"  role="button" class="pure-button switch" id="group-by-party" onclick = "document.getElementById('audio').play();">Split by party</a>
             </li>
-            <li><a href="#"  role="button" class="pure-button switch" id="group-by-donor-type" onclick="playAudio()">Split by type of donor</a>
+            <li><a href="#"  role="button" class="pure-button switch" id="group-by-donor-type" onclick = "document.getElementById('audio').play();">Split by type of donor</a>
             </li>
+	    <li><a href="#" role="button" class="pure-button switch" id="group-by-amount" onclick = "document.getElementById('audio').play();" >Split by the amount of donation</a>
+            </li>
+	
 	    
         </ul>
     </nav>
