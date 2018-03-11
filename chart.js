@@ -48,6 +48,7 @@ function transition(name) {
 		$("#view-donor-type").fadeOut(250);
 		$("#view-source-type").fadeOut(250);
 		$("#view-party-type").fadeOut(250);
+		$("#view-amount-type").fadeOut(250); //view-amount-type
 		return total();
 		//location.reload();
 	}
@@ -56,6 +57,7 @@ function transition(name) {
 		$("#value-scale").fadeOut(250);
 		$("#view-donor-type").fadeOut(250);
 		$("#view-source-type").fadeOut(250);
+		$("#view-amount-type").fadeOut(250); //view-amount-type
 		$("#view-party-type").fadeIn(1000);
 		return partyGroup();
 	}
@@ -64,6 +66,7 @@ function transition(name) {
 		$("#value-scale").fadeOut(250);
 		$("#view-party-type").fadeOut(250);
 		$("#view-source-type").fadeOut(250);
+		$("#view-amount-type").fadeOut(250); //view-amount-type
 		$("#view-donor-type").fadeIn(1000);
 		return donorType();
 	}
@@ -72,15 +75,18 @@ function transition(name) {
 		$("#value-scale").fadeOut(250);
 		$("#view-donor-type").fadeOut(250);
 		$("#view-party-type").fadeOut(250);
+		$("#view-amount-type").fadeOut(250); //view-amount-type
 		$("#view-source-type").fadeIn(1000);
 		return fundsType();
 	}
 	if (name === "group-by-amount") {
 		$("#initial-content").fadeOut(250);
 		$("#value-scale").fadeOut(250);
+		$("#view-donor-type").fadeOut(250);
 		$("#view-party-type").fadeOut(250);
 		$("#view-source-type").fadeOut(250);
-		$("#view-donor-type").fadeIn(1000);
+		$("#view-amount-type").fadeIn(1000); //view-amount-type
+		
 		return amountType();
 	}
 }	
@@ -284,7 +290,7 @@ function moveToAmounts(alpha) {
 				centreX=300;
 			}else if (d.value <=maxVal){
 				centreY=300;
-				centrex=300;
+				centreX=300;
 			}
 				
 
