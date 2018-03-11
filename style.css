@@ -44,36 +44,36 @@ li {
     height: 100%;
 }
     
-#amount_25000 {
+#amount25 {
     left: 150px;
     top: 230px;
     position: absolute;
 }       
-#amount_50000 {
+#amount50 {
     top:240px;
     left: 585px;
     width:50px;
     position:absolute;
 }
-#amount_100000 {
+#amount100 {
     top:240px;
     left: 525px;
     width:50px;
     position:absolute;
 }
-#amount_500000 {
+#amount500 {
     top: 240px;
     left: 425px;
     width:50px;
     position:absolute;
 }
-#amount_1000000 {
+#amount1000 {
     top:240px;
     left: 350px;
     width:50px;
     position:absolute;
 }
-#amount_over {
+#amountmax {
     top:240px;
     left: 150px;
     width:50px;
