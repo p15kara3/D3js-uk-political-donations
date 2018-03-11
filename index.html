@@ -32,6 +32,8 @@
     </script>
 </head>
 <!-- Add feature detection and noscript -->
+	
+<!--Adding zoom-->
 <style type="text/css">
         .zoom:hover {
 		
@@ -47,17 +49,23 @@
     <header role="banner" id="title">
         <h1 class="zoom">Who's funding the big three?</h1>
     </header>
+	
+	<!--Adding sound-->
+	
+    <script>
+	    var audio= new Audio("click_sound.mp3");
+	  
     <nav role="navigation">
         <ul>
-            <li><a href="#" role="button" class="pure-button switch" id="all-donations">All money</a>
+            <li><a href="#" onclick="audio.play()" role="button" class="pure-button switch" id="all-donations">All money</a>
             </li>
-            <li><a href="#" role="button" class="pure-button switch" id="group-by-money-source">The public's purse</a>
+            <li><a href="#" onclick="audio.play()" role="button" class="pure-button switch" id="group-by-money-source">The public's purse</a>
             </li>
-            <li><a href="#" role="button" class="pure-button switch" id="group-by-party">Split by party</a>
+            <li><a href="#" onclick="audio.play()" role="button" class="pure-button switch" id="group-by-party">Split by party</a>
             </li>
-            <li><a href="#" role="button" class="pure-button switch" id="group-by-donor-type">Split by type of donor</a>
+            <li><a href="#" onclick="audio.play()" role="button" class="pure-button switch" id="group-by-donor-type">Split by type of donor</a>
             </li>
-            <li><a href="#" role="button" class="pure-button switch" id="group-by-donations-amount">Split by the amount of the donation</a>
+            <li><a href="#" onclick="audio.play()" role="button" class="pure-button switch" id="group-by-donations-amount">Split by the amount of the donation</a>
             </li>
 
                 
