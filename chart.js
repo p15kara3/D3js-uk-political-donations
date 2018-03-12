@@ -156,7 +156,7 @@ function fundsType() {
 		.on("tick", types)
 		.start();
 }
-function amountType() {
+function amountType() { //Adding new function
 	force.gravity(0)
 		.friction(0.75)
 		.charge(function(d) { return -Math.pow(d.radius, 2.0) / 3; })
@@ -194,7 +194,7 @@ function all(e) {
 		node.attr("cx", function(d) { return d.x; })
 			.attr("cy", function(d) {return d.y; });
 }
-function amounts(e) {
+function amounts(e) { //Adding new function
 	node.each(moveToAmounts(e.alpha));
 		
 		node.attr("cx",function(d) {return d.x; })
@@ -268,27 +268,21 @@ function moveToFunds(alpha) {
 		d.y += (centreY - d.y) * (brake + 0.02) * alpha * 1.1;
 	};
 }
-function moveToAmounts(alpha) {
+function moveToAmounts(alpha) { //Adding new function
 	return function(d) {
 		
 		if (d.value <= 500000) { 
 			centreX = svgCentre.x ;
 			centreY = svgCentre.y + 50;
-		//} else if (d.value <= 100000) { 
-			//centreX = svgCentre.x + 250;
-			//centreY = svgCentre.y + 60;
+		
 		} else if (d.value <= 1000000){ 
 			centreX = svgCentre.x + 450;
 			centreY = svgCentre.y + 70;
-		//} else if (d.value <= 1000000) {
-			//centreX = svgCentre.x;
-			//centreY = svgCentre.y - 160;
-		} else { //else if (d.value <=5000000)
+		
+		} else { 
 			centreX = svgCentre.x + 260;
 			centreY = svgCentre.y - 170;
-		//} else{
-			//centreX = svgCentre.x + 460;
-			//centreY = svgCentre.y - 180;
+		
 		}
 
 		d.x += (centreX - d.x) * (brake + 0.02) * alpha * 1.1;
@@ -360,7 +354,7 @@ function display(data) {
 
 	return start();
 }
-function search(d) { //search function 
+function search(d) { //Adding function for search by Google
 	var donor=d.donor;
 	window.open("https://www.google.com/search?q=" + donor);
 }
@@ -403,7 +397,7 @@ function mouseover(d, i) {
 		.html(infoBox)
 			.style("display","block");
 	
-	responsiveVoice.speak(donor + " " + amount + "£","UK English Male",{volume: 1});
+	responsiveVoice.speak(donor + " " + amount + "£","UK English Male",{volume: 1}); //When mouse over speak
 	}
 
 function mouseout() {
@@ -414,7 +408,7 @@ function mouseout() {
 
 		d3.select(".tooltip")
 			.style("display", "none");
-	responsiveVoice.cancel(); 
+	responsiveVoice.cancel(); //When mouse not active don't speak
 		}
 
 	
