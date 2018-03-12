@@ -270,30 +270,31 @@ function moveToFunds(alpha) {
 }
 function moveToAmounts(alpha) {
 	return function(d) {
-		//var centreY = svgCentre.y;
-		if (d.value <= 25001) {
-				centreX = svgCentre.x;
-				centreY = svgCentre.y + 50;
-			} else if (d.value <= 50001) {
-			        centreX = svgCentre.x + 250;
-				centreY= svgCentre.y + 60;
-			//} else if (d.value <= 100001) {
-			//	centreX = svgCentre.x + 175;
-			//} else  if (d.value <= 500001) {
-			//	centreX = svgCentre.x + 150;
-			//} else  if (d.value <= 1000001) {
-			//	centreX = svgCentre.x +80;
-			//} else if (d.value<= maxVal) {	
-			//	centreX =svgCentre.x;
-			//} else {
-			//	centreX = svgCentre.x;
-			//}
+		
+		if (d.value <= 50000) { 
+			centreX = svgCentre.x ;
+			centreY = svgCentre.y + 50;
+		} else if (d.value <= 100000) { 
+			centreX = svgCentre.x + 250;
+			centreY = svgCentre.y + 60;
+		} else if (d.value <= 500000){ 
+			centreX = svgCentre.x + 450;
+			centreY = svgCentre.y + 70;
+		} else if (d.value <= 1000000) {
+			centreX = svgCentre.x;
+			centreY = svgCentre.y - 160;
+		} else if (d.value <= 5000000) {
+			centreX = svgCentre.x + 260;
+			centreY = svgCentre.y - 170;
+		} else{
+			centreX = svgCentre.x + 460;
+			centreY = svgCentre.y - 180;
+		}
 
-
-		d.x += (centreX - d.x) * (brake + 0.06) * alpha * 1.2;
-		d.y += (centreY - d.y) * (brake + 0.06) * alpha * 1.2;
+		d.x += (centreX - d.x) * (brake + 0.02) * alpha * 1.1;
+		d.y += (centreY - d.y) * (brake + 0.02) * alpha * 1.1;
 	};
-} 
+}
 		
 // Collision detection function by m bostock
 function collide(alpha) {
