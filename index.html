@@ -32,40 +32,35 @@
 </head>
 <!-- Add feature detection and noscript -->
     
-    <audio id="sound" src="click_sound.mp3"></audio>
-    <a onclick = "playSound();"></a>
-    <script>
-        function playSound() {
-          var sound = document.getElementById("sound");
-          sound.play();
-      }
-    </script>
-    
     <style type="text/css">
         .zoom:hover {
 		
-	-moz-transform: scale(1.5);
-        -ms-transform: scale(1.5); /* IE 9 */
-        -webkit-transform: scale(1.5); /* Safari 3-8 */
-        transform: scale(1.5);        /* (150% zoom)*/
+	-moz-transform: scale(1.5); /*Mozilla*/
+        -ms-transform: scale(1.5); /* IE */
+        -webkit-transform: scale(1.5); /* Safari*/
+        transform: scale(1.5); /* (150% zoom)*/
 }
 </style>
 <body>
     
     <header role="banner" id="title">
+	    
+	    <!--audio id tag-->
+	    <audio id="sound" src="click_sound.mp3" preload="auto"></audio> 
+	    
         <h1 class="zoom">Who's funding the big three?</h1>
     </header>
     <nav role="navigation">
         <ul>
-            <li><a href="#" role="button" class="pure-button switch" id="all-donations" onclick = "playSound()">All money</a>
+            <li><a href="#" role="button" class="pure-button switch" id="all-donations" onclick = "document.getElementById('sound').play();">All money</a>
             </li>
-            <li><a href="#" role="button" class="pure-button switch" id="group-by-money-source" onclick = "playSound()">The public's purse</a>
+            <li><a href="#" role="button" class="pure-button switch" id="group-by-money-source" onclick = "document.getElementById('sound').play();">The public's purse</a>
             </li>
-            <li><a href="#" role="button" class="pure-button switch" id="group-by-party" onclick = "playSound()">Split by party</a>
+            <li><a href="#" role="button" class="pure-button switch" id="group-by-party" onclick = "document.getElementById('sound').play();">Split by party</a>
             </li>
-            <li><a href="#" role="button" class="pure-button switch" id="group-by-donor-type" onclick = "playSound()">Split by type of donor</a>
+            <li><a href="#" role="button" class="pure-button switch" id="group-by-donor-type" onclick = "document.getElementById('sound').play();">Split by type of donor</a>
             </li>
-            <li><a href="#" role="button" class="pure-button switch" id="group-by-amount-of-donation" onclick="playSound()">Split by the amount of the donation</a>
+            <li><a href="#" role="button" class="pure-button switch" id="group-by-amount" onclick = "document.getElementById('sound').play();">Split by the amount of the donation</a>
             </li>
         </ul>
     </nav>
@@ -88,19 +83,19 @@
                 <p class="zoom">&#8212;UK average salary</p>
             </div>
             <div id="a">
-                <strong class="zoom">&#163;25k &#8212;</strong>
+                <p class="zoom"> <strong>&#163;25k &#8212;</strong> </p>
             </div>
             <div id="b">
-                <strong class="zoom">&#163;50k &#8212;</strong>
+                <p class="zoom"> <strong>&#163;50k &#8212;</strong> </p>
             </div>
             <div id="c">
-                <strong class="zoom">&#163;100k &#8212;</strong>
+                 <p class="zoom"> <strong>&#163;100k &#8212;</strong> </p>
             </div>
             <div id="d">
-                <strong class="zoom">&#163;500k &#8212;</strong>
+                <p class="zoom"> <strong>&#163;500k &#8212;</strong> </p>
             </div>
             <div id="e">
-                <strong class="zoom">&#163;1m &#8212;</strong>
+                <p class="zoom"> <strong>&#163;1m &#8212;</strong> </p>
             </div>
         </div>
         <!-- End initial-->
@@ -219,28 +214,45 @@
         </div>
     
                <div id="view-amount-type">
-		      <!-- <h5>"Split by the amount of donation:"</h5> -->
+		       <style>
+			       div.t {
+				       text-align: center;
+			       }
+		       </style>
+		       
+		       <!--Centering text-->
+		       
+		       <div class="t"> 
+		       <h2 class="zoom">Amount of the donations</h2>
+		       </div>
+		      
 		       <div id="amount-id">
-		       <div id="amount_25000"class="zoom">
-			       <strong>Amount less than 25k &#163;</strong>
+		       <div id="amount25"class="zoom">
+			       <p>Up to </p>
+			       <strong>25k &#163;</strong>
 			</div>
 			
-		       <div id="amount_50000" class="zoom">
-			       <strong>Amount less than 50k &#163;</strong>
+		       <div id="amount50" class="zoom">
+			       <p>Up to </p>
+			       <strong>50k &#163;</strong>
 			</div>  
 			
-		       <div id="amount_100000" class="zoom">
-			       <strong>Amount less than 100k &#163;</strong>
+		       <div id="amount100" class="zoom">
+			       <p>Up to </p>
+			       <strong>100k &#163;</strong>
 			</div>       
 			
-		       <div id="amount_500000" class="zoom">
-			       <strong>Amount less than 500k &#163;</strong>
+		       <div id="amount500" class="zoom">
+			       <p>Up to </p>
+			       <strong>500k &#163;</strong>
 			</div> 
-			<div id="amount_1000000" class="zoom">
-			       <strong>Amount less than 1m &#163;</strong>
+			<div id="amount1000" class="zoom">
+			       <p>Up to </p>
+			       <strong>1m &#163;</strong>
 			</div>        
-			<div id="amount_over" class="zoom">
-			       <strong>Amount more than 1m &#163;</strong>
+			<div id="amountmax" class="zoom">
+			       <p>More than </p>
+			       <strong>1m &#163;</strong>
 			</div> 
 		 </div>
 	    </div>  
