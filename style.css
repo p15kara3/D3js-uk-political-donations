@@ -39,7 +39,8 @@ li {
     left: 650px;
     width: 272px;
 }
-    
+ 
+/*new view*/
 #amount_right {
     top:700px;
     left: 650px;
@@ -47,7 +48,7 @@ li {
     position:absolute;
 } 
 
-
+/*new view*/
 #amount_up {
     top: 160px;
     left: 500px;
@@ -55,7 +56,7 @@ li {
     position:absolute;
 }
 
-
+/*new view*/
 #amount_left {
     top:430px;
     left: 150px;
