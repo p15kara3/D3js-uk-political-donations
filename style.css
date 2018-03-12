@@ -40,13 +40,14 @@ li {
     width: 272px;
 }
     
-#amount25 {
-    top:240px;
+#amount_right {
+    top:500px;
     left: 650px;
     width:50px;
     position:absolute;
-}       
-#amount50 {
+} 
+
+/*#amount50 {
     top:240px;
     left: 585px;
     width:50px;
@@ -57,21 +58,24 @@ li {
     left: 525px;
     width:50px;
     position:absolute;
-}
-#amount500 {
-    top: 240px;
+}*/
+
+#amount_up {
+    top: 140px;
     left: 425px;
     width:50px;
     position:absolute;
 }
-#amount1000 {
+
+/*#amount1000 {
     top:240px;
     left: 350px;
     width:50px;
     position:absolute;
-}
+}*/
+
 #amount_left {
-    top:350px;
+    top:380px;
     left: 150px;
     width:50px;
     position:absolute;
