@@ -41,41 +41,23 @@ li {
 }
     
 #amount_right {
-    top:500px;
+    top:900px;
     left: 650px;
     width:50px;
     position:absolute;
 } 
 
-/*#amount50 {
-    top:240px;
-    left: 585px;
-    width:50px;
-    position:absolute;
-}
-#amount100 {
-    top:240px;
-    left: 525px;
-    width:50px;
-    position:absolute;
-}*/
 
 #amount_up {
-    top: 140px;
-    left: 425px;
+    top: 160px;
+    left: 500px;
     width:50px;
     position:absolute;
 }
 
-/*#amount1000 {
-    top:240px;
-    left: 350px;
-    width:50px;
-    position:absolute;
-}*/
 
 #amount_left {
-    top:380px;
+    top:430px;
     left: 150px;
     width:50px;
     position:absolute;
