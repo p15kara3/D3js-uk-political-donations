@@ -70,8 +70,8 @@ li {
     width:50px;
     position:absolute;
 }
-#amountmax {
-    top:240px;
+#amount_left {
+    top:180px;
     left: 150px;
     width:50px;
     position:absolute;
