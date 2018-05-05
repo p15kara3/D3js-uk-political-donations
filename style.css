@@ -30,6 +30,8 @@ li {
     display: none;
 }
 
+
+
 /* View containers */
 #initial-content, #view-source-type,#view-amount-type{
     left: 650px;
@@ -81,6 +83,15 @@ li {
 }
 #public-money {
     left: 610px;
+}
+
+/*new view*/
+#filepic{
+    position:fixed;
+    display:inline-block;
+    left: 1100px;
+    top: 200px;
+ 
 }
 
 /* Party view */
