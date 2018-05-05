@@ -398,6 +398,16 @@ function mouseover(d, i) {
 			.style("display","block");
 	
 	responsiveVoice.speak(donor + " " + amount + "£","UK English Male",{volume: 1}); //When mouse over speak
+	
+	//when mouse over show picture
+	
+	var pic = document.createElement("img");
+    pic.setAttribute("src","http://www.bizreport.com/2011/02/03/android-logo-200x200.jpg");
+    pic.setAttribute("height","60");
+    pic.setAttribute("width","60");
+    pic.setAttribute("onerror",'this.src=\"https://github.com/favicon.ico\";');
+    document.getElementById("filepic").insertBefore(pic,document.getElementById("filepic").firstChild);
+    pic.src = imageFile;
 	}
 
 function mouseout() {
